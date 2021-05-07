@@ -53,6 +53,7 @@ Desktop view:
 <img width="1509" alt="Screen Shot 2021-05-07 at 1 50 51 PM" src="https://user-images.githubusercontent.com/81428925/117506958-488c0800-af3b-11eb-9072-69adea7ed855.png">
 
 Mobile View:
+<img width="1063" alt="Screen Shot 2021-05-07 at 2 04 58 PM" src="https://user-images.githubusercontent.com/81428925/117508321-3c08af00-af3d-11eb-9dbe-c528cdc92900.png">
 
 #### Component Tree
 
