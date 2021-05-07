@@ -21,7 +21,7 @@
 
 ## MVP
 
-Create an application where users can showcase their custom crafts to the community and buy/sell with other members of the community. MVP will be having a functional site that allows users to manage their own products and be able to view other users products from the main page. Users can add other users products as favorites that will be housed in a separate component.
+Create an application where users can showcase their custom crafts to the community and buy/sell with other members of the community. MVP will be having a functional site that allows users to manage their own products offering and also be able to view other users products from the main page. Users can add other users products as favorites that will be housed in a separate component.
 
 ### Goals
 
@@ -34,6 +34,7 @@ Create an application where users can showcase their custom crafts to the commun
 - _Front End will be built with React. Site will have a landing page that displays a list of all products with image and price._
 - _Each product on the page will be a clickable link that takes you to a details page for that product._
 - _Users will also have full CRUD access regarding creating and updating their profile as well._
+- _Users can review products that will be displayed on the details page._
 
 ### Libraries and Dependencies
 
@@ -147,6 +148,7 @@ src
 - _To build functionality that allows users to make purchases from the website._
 - _To incorporate an order history component that keeps track of user purchases and sales._
 - _Implement a search feature that allows users to search by user and/or by product._
+- _Implement a "similar items" feature from the product details page._
 
 ---
 
