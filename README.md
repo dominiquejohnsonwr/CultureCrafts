@@ -21,7 +21,7 @@
 
 ## MVP
 
-Create a application where users can showcase their custom crafts to the community and buy/sell with other members of the community. MVP will be having a functional site that allows users to manage their own products and be able to view other users products from the main page. Users can add other users products as favorites that will be housed in a separate component.
+Create an application where users can showcase their custom crafts to the community and buy/sell with other members of the community. MVP will be having a functional site that allows users to manage their own products and be able to view other users products from the main page. Users can add other users products as favorites that will be housed in a separate component.
 
 ### Goals
 
