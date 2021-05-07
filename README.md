@@ -17,19 +17,13 @@
 
 ## Overview
 
-\_**Culture-Crafts** is an online e-commerce website where you can shop for customized and personalized crafty creations right from the comfort of wherever you are.
+\*\*Culture-Crafts\*\* is an online e-commerce website where you can shop for customized and personalized crafty creations right from the comfort of wherever you are.
 
 ## MVP
 
 > The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
 
--Ruby on Rails back end server with RESTful JSON endpoints
--Project will have both 1:m and m:m associations between user/products/cart/order
--Full CRUD functionality on backend with users/products
--Create a landing page that displays a list of all products with image and price
--Each product on the page will be a clickable link that takes you to a details page for that product
--User will have ability to create product reviews and add items to cart
--Users will also have full CRUD access regarding their profile
+-_Ruby on Rails back end server with RESTful JSON endpoints_ -_Project will have both 1:m and m:m associations between user/products/cart/order_ -_Full CRUD functionality on backend with users/products_ -_Create a landing page that displays a list of all products with image and price_ -_Each product on the page will be a clickable link that takes you to a details page for that product_ -_User will have ability to create product reviews and add items to cart_ -_Users will also have full CRUD access regarding their profile_
 
 ### Goals
 
