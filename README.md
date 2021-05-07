@@ -119,7 +119,7 @@ src
 
 #### ERD Model
 
-<img width="772" alt="Screen Shot 2021-05-07 at 2 45 13 PM" src="https://user-images.githubusercontent.com/81428925/117511671-f8b13f00-af42-11eb-9760-24cb1f063336.png">
+<img width="772" alt="Screen Shot 2021-05-07 at 2 50 41 PM" src="https://user-images.githubusercontent.com/81428925/117512017-a15f9e80-af43-11eb-8570-11d688fbd558.png">
 
 ---
 
