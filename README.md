@@ -17,23 +17,23 @@
 
 ## Overview
 
-\*\*Culture-Crafts\*\* is an online e-commerce website where you can shop for customized and personalized crafty creations right from the comfort of wherever you are.
+#### CultureCrafts is an online e-commerce website where you can shop for customized and personalized crafty creations right from the comfort of wherever you are.
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
-
-This project will have a Ruby on Rails back end server with RESTful JSON endpoints.
-Project will have both 1:m and m:m associations between user/products/cart/order with full CRUD functionality on backend with users/product reviews and orders.
-<br>
-Front End will be built with React. Site will have a landing page that displays a list of all products with image and price. Each product on the page will be a clickable link that takes you to a details page for that product. Users will also have full CRUD access regarding creating and updating their profile as well.
+Create a application where users can showcase their custom crafts to the community and buy/sell with other members of the community. MVP will be having a functional site that allows users to manage their own products and be able to view other users products from the main page. Users can add other users products as favorites that will be housed in a separate component.
 
 ### Goals
 
 - _To have a fully functioning website that showcases a wide range of products available._
 - _Incorporate user authentication in order for user to be able to add any items to shopping cart._
 - _Style the website using CSS and make it responsive to different screen sizes._
-- _Build a foundation for users being able to create orders then submit them via email for processing._
+- _Build a foundation for users being able to view products and inquire about custom orders via email._
+- _This project will have a Ruby on Rails back end server with RESTful JSON endpoints._
+- _Project will have both 1:m and m:m associations between user/products/cart/order with full CRUD functionality on backend with users/product reviews and create and delete with favorites._
+- _Front End will be built with React. Site will have a landing page that displays a list of all products with image and price._
+- _Each product on the page will be a clickable link that takes you to a details page for that product._
+- _Users will also have full CRUD access regarding creating and updating their profile as well._
 
 ### Libraries and Dependencies
 
@@ -80,7 +80,7 @@ Front End will be built with React. Site will have a landing page that displays 
 
 > Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
 
-[Component Tree Sample]<img width="724" alt="Screen Shot 2021-05-07 at 10 24 40 AM" src="https://user-images.githubusercontent.com/81428925/117486561-a65e2700-af1e-11eb-9b69-58fcbc867aa0.png">
+[Component Tree Sample]<img width="782" alt="Screen Shot 2021-05-07 at 11 38 12 AM" src="https://user-images.githubusercontent.com/81428925/117494112-be3aa880-af28-11eb-99d1-5110604d97f1.png">
 
 #### Component Architecture
 
@@ -111,6 +111,10 @@ src
       |__ CreateProduct.css
       |__ EditProduct.jsx
       |__ EditProduct.css
+      |__ UserFavorites.jsx
+      |__ UserFavorites.css
+      |__ MyProducts.jsx
+      |__ MyProducts.css
 |__ services/
         |__ api_config.js
 
@@ -133,8 +137,10 @@ src
 | ProductsDetail    |    H     |     4 hrs      |      hrs      |     TBD     |
 | CreateProduct     |    H     |     3 hrs      |      hrs      |     TBD     |
 | EditProduct       |    H     |     3 hrs      |      hrs      |     TBD     |
+| UserFavorites     |    H     |     3 hrs      |      hrs      |     TBD     |
+| MyProducts        |    H     |     2 hrs      |      hrs      |     TBD     |
 | Styling All       |    H     |     7 hrs      |      hrs      |     TBD     |
-| TOTAL             |          |     47 hrs     |      hrs      |     TBD     |
+| TOTAL             |          |     52 hrs     |      hrs      |     TBD     |
 
 ### Server (Back End)
 
@@ -142,7 +148,7 @@ src
 
 > Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
 
-[ERD Sample](<img width="724" alt="Screen Shot 2021-05-07 at 11 03 43 AM" src="https://user-images.githubusercontent.com/81428925/117490659-f095d700-af23-11eb-8afb-c75e1d999aae.png">)
+[ERD Sample]<img width="724" alt="Screen Shot 2021-05-07 at 11 03 43 AM" src="https://user-images.githubusercontent.com/81428925/117490659-f095d700-af23-11eb-8afb-c75e1d999aae.png">
 
 ---
 
