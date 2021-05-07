@@ -49,31 +49,10 @@ Create an application where users can showcase their custom crafts to the commun
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
+Desktop view:
+<img width="1509" alt="Screen Shot 2021-05-07 at 1 50 51 PM" src="https://user-images.githubusercontent.com/81428925/117506958-488c0800-af3b-11eb-9072-69adea7ed855.png">
 
-![Dummy Link](url)
-
-- Desktop Landing
-
-![Dummy Link](url)
-
-- Desktop Hero
-
-![Dummy Link](url)
-
-- Resource Index
-
-![Dummy Link](url)
-
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
+Mobile View:
 
 #### Component Tree
 
@@ -139,7 +118,7 @@ src
 
 #### ERD Model
 
-<img width="724" alt="Screen Shot 2021-05-07 at 11 03 43 AM" src="https://user-images.githubusercontent.com/81428925/117490659-f095d700-af23-11eb-8afb-c75e1d999aae.png">
+<img width="771" alt="Screen Shot 2021-05-07 at 12 48 28 PM" src="https://user-images.githubusercontent.com/81428925/117501174-8cc6da80-af32-11eb-80e4-b16072557ae1.png">
 
 ---
 
