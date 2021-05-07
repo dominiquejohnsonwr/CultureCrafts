@@ -23,7 +23,10 @@
 
 > The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
 
--_Ruby on Rails back end server with RESTful JSON endpoints_ -_Project will have both 1:m and m:m associations between user/products/cart/order_ -_Full CRUD functionality on backend with users/products_ -_Create a landing page that displays a list of all products with image and price_ -_Each product on the page will be a clickable link that takes you to a details page for that product_ -_User will have ability to create product reviews and add items to cart_ -_Users will also have full CRUD access regarding their profile_
+This project will have a Ruby on Rails back end server with RESTful JSON endpoints.
+Project will have both 1:m and m:m associations between user/products/cart/order with full CRUD functionality on backend with users/product reviews and orders.
+<br>
+Front End will be built with React. Site will have a landing page that displays a list of all products with image and price. Each product on the page will be a clickable link that takes you to a details page for that product. Users will also have full CRUD access regarding creating and updating their profile as well.
 
 ### Goals
 
@@ -36,13 +39,12 @@
 
 > Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
 
-|     Library      | Description                                |
-| :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|   Library    | Description                                                                |
+| :----------: | :------------------------------------------------------------------------- |
+|    React     | _Used for Front End user interface_                                        |
+| React Router | _Will allow me to build website that user can navigate without refreshing_ |
+|    Rails     | _Framework I will use for my Back End functions and routes_                |
+|    Axios     | _I will make my API calls using axios_                                     |
 
 ### Client (Front End)
 
@@ -78,7 +80,7 @@
 
 > Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
 
-[Component Tree Sample](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
+[Component Tree Sample]<img width="724" alt="Screen Shot 2021-05-07 at 10 24 40 AM" src="https://user-images.githubusercontent.com/81428925/117486561-a65e2700-af1e-11eb-9b69-58fcbc867aa0.png">
 
 #### Component Architecture
 
@@ -87,14 +89,30 @@
 ```structure
 
 src
-|__ assets/
-|__ fonts
-|__ graphics
-|__ images
-|__ mockups
+|__ App.js
 |__ components/
-|__ Header.jsx
+      |__ Navbar.jsx
+      |__ Navbar.css
+      |__ Login.jsx
+      |__ Login.css
+      |__ SignUp.jsx
+      |__ SignUp.css
+      |__ App.js
+      |__ App.css
+      |__ UserProfile.jsx
+      |__ UserProfile.css
+      |__ EditProfile.jsx
+      |__ EditProfile.css
+      |__ ProductsContainer.jsx
+      |__ ProductsContainer.css
+      |__ ProductDetail.jsx
+      |__ ProductDetail.css
+      |__ CreateProduct.jsx
+      |__ CreateProduct.css
+      |__ EditProduct.jsx
+      |__ EditProduct.css
 |__ services/
+        |__ api_config.js
 
 ```
 
@@ -102,13 +120,21 @@ src
 
 > Use this section to estimate the time necessary to build out each of the components you've described above.
 
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
-
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
+| Task              | Priority | Estimated Time | Time Invested | Actual Time |
+| ----------------- | :------: | :------------: | :-----------: | :---------: |
+| Prep/Markdown     |    H     |     6 hrs      |     6 hrs     |     TBD     |
+| Navbar            |    M     |     3 hrs      |      hrs      |     TBD     |
+| Create Signup     |    H     |     3 hrs      |      hrs      |     TBD     |
+| Create Login      |    H     |     3 hrs      |      hrs      |     TBD     |
+| App.js            |    H     |     4 hrs      |      hrs      |     TBD     |
+| UserProfile       |    H     |     4 hrs      |      hrs      |     TBD     |
+| EditProfile       |    H     |     3 hrs      |      hrs      |     TBD     |
+| ProductsContainer |    H     |     4 hrs      |      hrs      |     TBD     |
+| ProductsDetail    |    H     |     4 hrs      |      hrs      |     TBD     |
+| CreateProduct     |    H     |     3 hrs      |      hrs      |     TBD     |
+| EditProduct       |    H     |     3 hrs      |      hrs      |     TBD     |
+| Styling All       |    H     |     7 hrs      |      hrs      |     TBD     |
+| TOTAL             |          |     47 hrs     |      hrs      |     TBD     |
 
 ### Server (Back End)
 
@@ -116,13 +142,15 @@ src
 
 > Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
 
-[ERD Sample](https://drive.google.com/file/d/1kLyQTZqfcA4jjKWQexfEkG2UspyclK8Q/view)
+[ERD Sample](<img width="724" alt="Screen Shot 2021-05-07 at 11 03 43 AM" src="https://user-images.githubusercontent.com/81428925/117490659-f095d700-af23-11eb-8afb-c75e1d999aae.png">)
 
 ---
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+- _To build functionality that allows users to make purchases from the website._
+- _To incorporate an order history component that keeps track of user purchases and sales._
+- _Implement a search feature that allows users to search by user and/or by product._
 
 ---
 
