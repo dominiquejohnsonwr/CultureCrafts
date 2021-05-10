@@ -27,3 +27,14 @@ export const verifyUser = async () => {
   }
   return false
 }
+
+export const getUser = async (id) => {
+  const res = await api.get(`/users/${id}`)
+  const user = res.data
+  return user
+}
+
+export const updateUser = async (id, formData) => {
+  const res = await api.put(`/users/${id}`, { user: formData })
+  return res.data
+}

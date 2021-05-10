@@ -21,9 +21,11 @@ function SignUp() {
       <h1>Sign Up</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <label>Username:</label>
-        <input name="name" type= "text"/>
+        <input name="name" type="text"/>
         <label>Email:</label>
         <input name="email" type="email" />
+        <label>Profile Image Url:</label>
+        <input name="profile_img" type="text" placeholder="paste your image url here..." />
         <label>Password:</label>
         <input name="password" type="password" />
         <label>Password Confirmation:</label>
