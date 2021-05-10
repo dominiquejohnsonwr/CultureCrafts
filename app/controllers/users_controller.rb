@@ -13,16 +13,6 @@ class UsersController < ApiController
     render json: @user, include: [:product]
   end
 
-  def create
-    @user = User.new(user_params)
-
-    if @user.save
-      render json: @user
-    else
-      render json: @user.errors
-    end
-  end
-
   def update
     @user = User.find(params[:id])
 

@@ -2,18 +2,30 @@ import React from 'react'
 import { Link } from "react-router-dom"
 
 export default function Navbar(props) {
-  if (props.currentUser) {
-    return (
-      <div>
-        <p> Welcome, {props.currentUser && props.currentUser.name}!</p>
-      </div>
-    )
-  } else {
-    return (
-      <div>
-        <Link to='/login'>Sign in</Link>
-        <Link to='/signup'>Register</Link>
-      </div>
-    )
+  let id = props.userData
+  function showNav() {
+    if (props.currentUser) {
+      return (
+        <div className='links'>
+          <p> Welcome, {props.currentUser && props.currentUser.name}!</p>
+          <Link to={`/users/${id}`}>My Profile</Link>
+          <Link to={`/users/${id}/products`}>My Products</Link>
+          <button onClick={props.logout}>Sign out</button>
+        </div>
+      )
+    } else {
+      return (
+        <div className='links'>
+          <Link to='/login'>Sign in</Link>
+          <Link to='/signup'>Register</Link>
+        </div>
+      )
+    }
   }
+  return (
+    <div className='nav'>
+      <h1><img className='logo' src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/cc-512.png" height="80px" alt="logo"/> Culture Crafts</h1>
+      {showNav()}
+    </div>
+  )
 }

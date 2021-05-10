@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :reviews
+  resources :favorites
   resources :products
 
   devise_for :users, controllers: { registrations: 'registrations' }

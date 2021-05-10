@@ -17,7 +17,8 @@ function Login(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let res = await loginUser(input);
+    await loginUser(input);
+    props.verify()
     history.push("/products")
   };
   return (

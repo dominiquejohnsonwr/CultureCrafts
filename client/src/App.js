@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Switch } from "react-router-dom"
+import {Switch, Route, useHistory} from "react-router-dom"
 import {useEffect, useState} from "react"
 import Navbar from "./components/Navbar.jsx"
 import SignUp from './components/SignUp';
@@ -11,6 +11,16 @@ import EditProfile from './components/EditProfile';
 function App() {
 
   const [currentUser, setCurrentUser] = useState(null)
+  const [userData, setUserData] = useState(null)
+
+  let history = useHistory()
+
+  const logout = async () => {
+    await localStorage.clear()
+    setCurrentUser(null)
+    setUserData(null)
+    history.push("/login")
+  }
 
   useEffect(() => {
     verify()
@@ -23,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar currentUser={currentUser} />
+      <Navbar currentUser={currentUser} logout={logout} userData={userData} />
       <Switch>
         <Route path='/signup'>
           <SignUp setCurrentUser={setCurrentUser} />
