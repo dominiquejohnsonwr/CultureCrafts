@@ -10,7 +10,7 @@ class UsersController < ApiController
   def show
     @user = User.find(params[:id])
 
-    render json: @user, include: [:product]
+    render json: @user, include: [:products]
   end
 
   def update

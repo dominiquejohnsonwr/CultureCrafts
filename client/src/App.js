@@ -1,11 +1,14 @@
 import './App.css';
-import {Switch, Route, useHistory} from "react-router-dom"
+import {Redirect, Switch, Route, useHistory} from "react-router-dom"
 import {useEffect, useState} from "react"
 import Navbar from "./components/Navbar.jsx"
-import SignUp from './components/SignUp';
-import Login from "./components/Login"
+import SignUp from './components/SignUp.jsx';
+import Login from "./components/Login.jsx"
+import UserProfile from "./components/UserProfile.jsx"
+import Profile from "./components/Profile.jsx"
 
 import { verifyUser } from "./services/auth"
+import { getUser } from "./services/auth"
 import EditProfile from './components/EditProfile';
 
 function App() {
@@ -26,10 +29,21 @@ function App() {
     verify()
   }, [])
 
+  useEffect(() => {
+    if (currentUser) {
+      // getUserData()  
+      }
+    }, [currentUser])
+
   const verify = async () => {
     let user = await verifyUser()
     setCurrentUser(user)
   }
+
+  // async function getUserData() {
+  //   let res = await getUser({email: currentUser.email})
+  //   setUserData(res)
+  // }
 
   return (
     <div className="App">
@@ -44,7 +58,15 @@ function App() {
         </Route>
 
         <Route path='/edit-users/:id'>
-          <EditProfile />
+          <EditProfile userData={userData} />
+        </Route>
+
+        <Route path='/user-profile'>
+          <UserProfile currentUser={currentUser}/>
+        </Route>
+
+        <Route path="/users/:id">
+          <Profile />
         </Route>
 
 

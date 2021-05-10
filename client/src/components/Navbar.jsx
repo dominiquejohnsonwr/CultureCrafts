@@ -2,20 +2,20 @@ import React from 'react'
 import { Link } from "react-router-dom"
 
 export default function Navbar(props) {
-  let id = props.userData
+  // let id = props.userData
   function showNav() {
     if (props.currentUser) {
       return (
-        <div className='links'>
+        <div className='nav-links'>
           <p> Welcome, {props.currentUser && props.currentUser.name}!</p>
-          <Link to={`/users/${id}`}>My Profile</Link>
-          <Link to={`/users/${id}/products`}>My Products</Link>
+          <Link to={`/user-profile`}>My Profile</Link>
+          <Link to={`/users/${props.currentUser.id}/products`}>My Products</Link>
           <button onClick={props.logout}>Sign out</button>
         </div>
       )
     } else {
       return (
-        <div className='links'>
+        <div className='nav-links'>
           <Link to='/login'>Sign in</Link>
           <Link to='/signup'>Register</Link>
         </div>

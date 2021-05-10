@@ -29,12 +29,13 @@ export const verifyUser = async () => {
 }
 
 export const getUser = async (id) => {
+  console.log(id)
   const res = await api.get(`/users/${id}`)
   const user = res.data
   return user
 }
 
-export const updateUser = async (user_id, formData) => {
-  const res = await api.put(`/users/${user_id}`, { user: formData })
+export const updateUser = async (id, formData) => {
+  const res = await api.put(`/users/${id}`, { user: formData })
   return res.data
 }
