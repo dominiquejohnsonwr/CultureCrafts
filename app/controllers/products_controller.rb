@@ -1,5 +1,6 @@
 class ProductsController < ApiController
   skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_product, only: %i[show update destroy]
 
   def index
     @products = Product.all
@@ -8,13 +9,11 @@ class ProductsController < ApiController
   end
 
   def show
-    @product = Product.find(params[:id])
-
     render json: @product, include: [:user]
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = current_user.products.build(product_params)
 
     if product.save
       render json: @product
@@ -24,9 +23,7 @@ class ProductsController < ApiController
   end
 
   def update
-    @product = Product.find(params[:id])
-
-    if @product.update(product_params)
+    if @product.user == current_user && @product.update(product_params)
       render json: @product
     else
       render json: @product.errors
@@ -34,9 +31,11 @@ class ProductsController < ApiController
   end
 
   def destroy
-    set_product
-    @product.destroy
-    render json: { message: 'Your product has been successfully deleted.' }
+    if @product.user == current_user && @product.destroy
+      render json: { message: 'Your product has been successfully deleted.' }
+    else
+      render json: @product.errors
+    end
   end
 
   private

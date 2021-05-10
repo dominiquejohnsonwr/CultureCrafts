@@ -6,6 +6,7 @@ import SignUp from './components/SignUp';
 import Login from "./components/Login"
 
 import { verifyUser } from "./services/auth"
+import EditProfile from './components/EditProfile';
 
 function App() {
 
@@ -25,11 +26,15 @@ function App() {
       <Navbar currentUser={currentUser} />
       <Switch>
         <Route path='/signup'>
-          <SignUp />
+          <SignUp setCurrentUser={setCurrentUser} />
         </Route>
 
         <Route path='/login'>
           <Login verify={verify} />
+        </Route>
+
+        <Route path='/edit-users/:id'>
+          <EditProfile />
         </Route>
 
 

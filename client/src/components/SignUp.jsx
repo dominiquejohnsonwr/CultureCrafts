@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { registerUser } from "../services/auth";
+import { loginUser, registerUser } from "../services/auth";
+import {useHistory} from "react-router-dom"
 
-function SignUp() {
+function SignUp(props) {
+  let history = useHistory()
   const [input, setInput] = useState({});
-  const handleChange = (e) => {
+  
+    const handleChange = (e) => {
     const { name, value } = e.target;
     setInput((prevState) => ({
       ...prevState,
@@ -13,7 +16,10 @@ function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let res = await registerUser(input);
+    await registerUser(input);
+    let res = await loginUser(input)
+    props.setCurrentUser(res.payload)
+    history.push("/products")
     console.log(res);
   };
   return (

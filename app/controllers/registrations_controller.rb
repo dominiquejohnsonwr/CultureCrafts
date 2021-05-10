@@ -13,6 +13,6 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def sign_up_params
-    params.permit(:email, :password, :password_confirmation)
+    params.permit(:name, :email, :profile_img, :password, :password_confirmation)
   end
 end

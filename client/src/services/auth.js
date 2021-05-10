@@ -34,7 +34,7 @@ export const getUser = async (id) => {
   return user
 }
 
-export const updateUser = async (id, formData) => {
-  const res = await api.put(`/users/${id}`, { user: formData })
+export const updateUser = async (user_id, formData) => {
+  const res = await api.put(`/users/${user_id}`, { user: formData })
   return res.data
 }

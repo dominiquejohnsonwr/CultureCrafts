@@ -1,5 +1,5 @@
 class UsersController < ApiController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show create]
 
   def index
     @users = User.all
@@ -10,7 +10,7 @@ class UsersController < ApiController
   def show
     @user = User.find(params[:id])
 
-    render json: @user, include: [:products]
+    render json: @user, include: [:product]
   end
 
   def create

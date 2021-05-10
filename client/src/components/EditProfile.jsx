@@ -9,6 +9,7 @@ export default function EditProfile(props) {
 
   useEffect(() => {
     getUserData()
+    // eslint-disable-next-line
   }, [id])
 
   async function getUserData() {
@@ -51,7 +52,7 @@ export default function EditProfile(props) {
         <input name="email" type="email" placeholder="Enter your email address" defaultValue={user.email} />
         <label>Profile Image Url:</label>
         <input name="profile_img" type="text" placeholder="paste your image url here..." defaultValue={user.profile_img} />
-        <button type="submit">Sign Up</button>
+        <button type="submit">Submit Changes</button>
       </form>
     </div>
   )

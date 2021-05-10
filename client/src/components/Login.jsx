@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { loginUser } from "../services/auth";
+import {useHistory} from "react-router-dom"
+
 
 function Login(props) {
+  let history = useHistory()
   const [input, setInput] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInput((prevState) => ({
@@ -14,7 +18,7 @@ function Login(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let res = await loginUser(input);
-    console.log(res);
+    history.push("/products")
   };
   return (
     <div>

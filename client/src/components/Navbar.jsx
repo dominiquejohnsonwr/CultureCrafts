@@ -6,7 +6,6 @@ export default function Navbar(props) {
     return (
       <div>
         <p> Welcome, {props.currentUser && props.currentUser.name}!</p>
-      Navbar
       </div>
     )
   } else {
