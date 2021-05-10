@@ -1,23 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Switch } from "react-router-dom"
+import {useEffect, useState} from "react"
+import Navbar from "./components/Navbar.jsx"
+import SignUp from './components/SignUp';
+import Login from "./components/Login"
+
+import { verifyUser } from "./services/auth"
 
 function App() {
+
+  const [currentUser, setCurrentUser] = useState(null)
+
+  useEffect(() => {
+    verify()
+  }, [])
+
+  const verify = async () => {
+    let user = await verifyUser()
+    setCurrentUser(user)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar currentUser={currentUser} />
+      <Switch>
+        <Route path='/signup'>
+          <SignUp />
+        </Route>
+
+        <Route path='/login'>
+          <Login verify={verify} />
+        </Route>
+
+
+      </Switch>
     </div>
   );
 }
