@@ -44,3 +44,8 @@ export const getAllProducts = async () => {
   const res = await api.get('/products')
   return res.data
 }
+
+export const createNewProduct = async (formData) => {
+  const res = await api.post(`/products`, { product: formData })
+  return res.data
+}

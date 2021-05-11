@@ -7,9 +7,9 @@ export default function UserProfile(props) {
   let userLoggedIn = props.currentUser
 
   const showEditButton = () => {
-    if (userLoggedIn && userLoggedIn.id === id) {
+      if (userLoggedIn && userLoggedIn.id) {
       return (
-        <Link to={`/edit-users/${id}`} className="user-btn">
+        <Link to={`/edit-users/${userLoggedIn.id}`} className="edit-user-btn">
           <img src="https://www.pinclipart.com/picdir/big/220-2203636_ykle-wode-svg-png-icon-free-download-edit.png" height={30} width={30} alt={"edit profile icon"} />
         </Link>
       )
@@ -22,10 +22,10 @@ export default function UserProfile(props) {
         <h3>User Profile</h3>
         <div className="user-info-contain">
           <div className="user-info">
-            <img className="profile-image" src={props.currentUser.profile_img ? props.currentUser.profile_img : "https://sumaleeboxinggym.com/wp-content/uploads/2018/06/Generic-Profile-1600x1600.png"} height={350} width={350} alt="profile pic" />
+            <img className="profile-image" src={userLoggedIn.profile_img ? userLoggedIn.profile_img : "https://sumaleeboxinggym.com/wp-content/uploads/2018/06/Generic-Profile-1600x1600.png"} height={350} width={350} alt="profile pic" />
             <div className="user-details">
-              <h1>{props.currentUser.name}</h1>
-              <p>{props.currentUser.email}</p>
+              <h1>{userLoggedIn.name}</h1>
+              <p>{userLoggedIn.email}</p>
             </div>
           </div>      
         </div>

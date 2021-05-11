@@ -9,7 +9,7 @@ export default function Navbar(props) {
         <div className='nav-links'>
           <p> Welcome, {props.currentUser && props.currentUser.name}!</p>
           <Link to={`/user-profile`}>My Profile</Link>
-          <Link to={`/users/${props.currentUser.id}/products`}>My Products</Link>
+          <Link to={`/`}>Home</Link>
           <button onClick={props.logout}>Sign out</button>
         </div>
       )
