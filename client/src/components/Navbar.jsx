@@ -24,8 +24,10 @@ export default function Navbar(props) {
   }
   return (
     <div className='nav'>
-      <h1><img className='logo' src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/cc-512.png" height="80px" alt="logo"/> Culture Crafts</h1>
-      {showNav()}
+      <Link to='/'>
+        <h3><img className='logo' src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/cc-512.png" height="80px" alt="logo" /> Culture Crafts</h3>
+      </Link>
+        {showNav()}
     </div>
   )
 }
