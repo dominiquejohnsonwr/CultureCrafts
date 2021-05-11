@@ -1,5 +1,5 @@
 import './App.css';
-import {Redirect, Switch, Route, useHistory} from "react-router-dom"
+import { Switch, Route, useHistory } from "react-router-dom"
 import {useEffect, useState} from "react"
 import Navbar from "./components/Navbar.jsx"
 import SignUp from './components/SignUp.jsx';
@@ -8,8 +8,8 @@ import UserProfile from "./components/UserProfile.jsx"
 import Profile from "./components/Profile.jsx"
 
 import { verifyUser } from "./services/auth"
-import { getUser } from "./services/auth"
 import EditProfile from './components/EditProfile';
+import Products from './components/Products';
 
 function App() {
 
@@ -28,22 +28,11 @@ function App() {
   useEffect(() => {
     verify()
   }, [])
-
-  useEffect(() => {
-    if (currentUser) {
-      // getUserData()  
-      }
-    }, [currentUser])
-
+  
   const verify = async () => {
     let user = await verifyUser()
     setCurrentUser(user)
   }
-
-  // async function getUserData() {
-  //   let res = await getUser({email: currentUser.email})
-  //   setUserData(res)
-  // }
 
   return (
     <div className="App">
@@ -67,6 +56,10 @@ function App() {
 
         <Route path="/users/:id">
           <Profile />
+        </Route>
+
+        <Route exact path='/'>
+          <Products />
         </Route>
 
 

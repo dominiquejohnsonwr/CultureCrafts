@@ -9,6 +9,7 @@ export default function Profile() {
 
   useEffect(() => {
     fetch()
+    // eslint-disable-next-line
   }, [])
 
   async function fetch() {

@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react"
-import { getUser } from "../services/auth"
 import { useParams, Link, } from "react-router-dom"
 
 
 
 export default function UserProfile(props) {
-  let [user, setUser] = useState({})
   let { id } = useParams()
   let userLoggedIn = props.currentUser
 
@@ -19,7 +16,8 @@ export default function UserProfile(props) {
     }
   }
     return (
-      <div className="profile-container">
+      <div>
+        <div className="profile-container">
         {showEditButton()}
         <h3>User Profile</h3>
         <div className="user-info-contain">
@@ -29,9 +27,18 @@ export default function UserProfile(props) {
               <h1>{props.currentUser.name}</h1>
               <p>{props.currentUser.email}</p>
             </div>
-          </div>
-      
+          </div>      
         </div>
+        </div>
+
+        <div className="products-container">
+          <h3>My Products</h3>
+          <Link to={`/add-product/${props.currentUser.id}`}><button>Add a new product</button></Link>
+        </div>
+        
       </div>
+
+      
+
   )
 }

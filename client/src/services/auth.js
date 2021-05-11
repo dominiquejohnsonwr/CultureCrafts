@@ -39,3 +39,8 @@ export const updateUser = async (id, formData) => {
   const res = await api.put(`/users/${id}`, { user: formData })
   return res.data
 }
+
+export const getAllProducts = async () => {
+  const res = await api.get('/products')
+  return res.data
+}
