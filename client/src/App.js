@@ -8,6 +8,7 @@ import UserProfile from "./components/UserProfile.jsx"
 import Profile from "./components/Profile.jsx"
 import NewProduct from "./components/NewProduct.jsx"
 import ProductDetails from "./components/ProductDetails.jsx"
+import EditProduct from "./components/EditProduct.jsx"
 
 import { verifyUser } from "./services/auth"
 import EditProfile from './components/EditProfile';
@@ -53,7 +54,7 @@ function App() {
         </Route>
 
         <Route path='/user-profile'>
-          <UserProfile currentUser={currentUser}/>
+          <UserProfile currentUser={currentUser} />
         </Route>
 
         <Route path="/users/:id">
@@ -70,6 +71,10 @@ function App() {
 
         <Route path='/products/:id'>
           <ProductDetails />
+        </Route>
+
+        <Route path='/edit-product/:id'>
+          <EditProduct />
         </Route>
 
 

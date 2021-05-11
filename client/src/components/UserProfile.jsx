@@ -1,9 +1,8 @@
-import { useParams, Link, } from "react-router-dom"
+import { Link, } from "react-router-dom"
 
 
 
 export default function UserProfile(props) {
-  let { id } = useParams()
   let userLoggedIn = props.currentUser
 
   const showEditButton = () => {
@@ -42,7 +41,8 @@ export default function UserProfile(props) {
           <img src={product.img_url} alt='product' height="200px"/>
             <h5>${product.price}</h5>
             <p>{product.description}</p>
-          </Link>
+            </Link>
+            <Link to={`/edit-product/${product.id}`}><button>Edit Item</button> </Link>
           </div>
       })}
         </div>        

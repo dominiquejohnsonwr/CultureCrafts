@@ -54,3 +54,8 @@ export const createNewProduct = async (formData) => {
   const res = await api.post(`/products`, { product: formData })
   return res.data
 }
+
+export const updateProduct = async (id, formData) => {
+  const res = await api.put(`/products/${id}`, { product: formData })
+  return res.data
+}
