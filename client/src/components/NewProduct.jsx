@@ -19,7 +19,8 @@ export default function NewProduct() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const res = await createNewProduct(input)
+    await createNewProduct(input)
+    setInput(input)
     history.push('/')
   }
 

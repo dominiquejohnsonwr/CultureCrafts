@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
 export default function Navbar(props) {
+  const history = useHistory()
   // let id = props.userData
   function showNav() {
+
     if (props.currentUser) {
       return (
         <div className='nav-links'>

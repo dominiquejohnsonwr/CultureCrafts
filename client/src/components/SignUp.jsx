@@ -19,7 +19,7 @@ function SignUp(props) {
     await registerUser(input);
     let res = await loginUser(input)
     props.setCurrentUser(res.payload)
-    history.push("/products")
+    history.push("/login")
     console.log(res);
   };
   return (

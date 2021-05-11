@@ -15,6 +15,8 @@ class ProductsController < ApiController
   def create
     @product = current_user.products.build(product_params)
 
+    # @product.user = current_user
+
     if @product.save
       render json: @product
     else

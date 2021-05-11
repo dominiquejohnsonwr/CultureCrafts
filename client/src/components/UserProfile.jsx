@@ -15,7 +15,8 @@ export default function UserProfile(props) {
       )
     }
   }
-    return (
+  return (
+      userLoggedIn? 
       <div>
         <div className="profile-container">
         {showEditButton()}
@@ -34,10 +35,19 @@ export default function UserProfile(props) {
         <div className="products-container">
           <h3>My Products</h3>
           <Link to={`/add-product/${props.currentUser.id}`}><button>Add a new product</button></Link>
-          
-        </div>
-        
+          {userLoggedIn.products.map((product) => {
+          return <div>
+          {/* <Link to='/products/:id'> */}
+            <h4>{product.name}</h4>
+          <img src={product.img_url} alt='product' height="200px"/>
+            <h5>${product.price}</h5>
+            <p>{product.description}</p>
+          {/* </Link> */}
+          </div>
+      })}
+        </div>        
       </div>
+      : <div>Loading...</div>
 
       
 

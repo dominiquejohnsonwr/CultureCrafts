@@ -48,7 +48,7 @@ function App() {
         </Route>
 
         <Route path='/edit-users/:id'>
-          <EditProfile userData={userData} />
+          <EditProfile userData={userData} setCurrentUser={setCurrentUser} />
         </Route>
 
         <Route path='/user-profile'>

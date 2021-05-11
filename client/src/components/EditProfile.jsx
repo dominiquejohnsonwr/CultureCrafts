@@ -3,7 +3,7 @@ import { updateUser } from "../services/auth"
 import { getUser } from "../services/auth"
 import { useParams, useHistory } from "react-router-dom"
 
-export default function EditProfile() {
+export default function EditProfile(props) {
   let { id } = useParams()
   let [user, setUser] = useState({})
 
@@ -36,10 +36,12 @@ export default function EditProfile() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await updateUser(id, input);
+    let result = await updateUser(id, input);
+    props.setCurrentUser(result)
     setInput(input)
     history.push(`/user-profile`)
-  };
+  }
+
 
   return (
     <div>
