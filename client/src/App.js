@@ -7,6 +7,7 @@ import Login from "./components/Login.jsx"
 import UserProfile from "./components/UserProfile.jsx"
 import Profile from "./components/Profile.jsx"
 import NewProduct from "./components/NewProduct.jsx"
+import ProductDetails from "./components/ProductDetails.jsx"
 
 import { verifyUser } from "./services/auth"
 import EditProfile from './components/EditProfile';
@@ -65,6 +66,10 @@ function App() {
 
         <Route path='/add-product'>
           <NewProduct />
+        </Route>
+
+        <Route path='/products/:id'>
+          <ProductDetails />
         </Route>
 
 

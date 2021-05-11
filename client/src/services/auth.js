@@ -29,7 +29,6 @@ export const verifyUser = async () => {
 }
 
 export const getUser = async (id) => {
-  console.log(id)
   const res = await api.get(`/users/${id}`)
   const user = res.data
   return user
@@ -43,6 +42,12 @@ export const updateUser = async (id, formData) => {
 export const getAllProducts = async () => {
   const res = await api.get('/products')
   return res.data
+}
+
+export const getProduct = async (id) => {
+  const res = await api.get(`/products/${id}`)
+  const product = res.data
+  return product
 }
 
 export const createNewProduct = async (formData) => {
