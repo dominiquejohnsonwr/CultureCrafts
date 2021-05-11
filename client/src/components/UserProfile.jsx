@@ -15,8 +15,8 @@ export default function UserProfile(props) {
     }
   }
   return (
-      userLoggedIn? 
-      <div>
+    userLoggedIn && userLoggedIn.products?
+    <div>
         <div className="profile-container">
         {showEditButton()}
         <h3>User Profile</h3>
@@ -30,7 +30,6 @@ export default function UserProfile(props) {
           </div>      
         </div>
         </div>
-
         <div className="products-container">
           <h3>My Products</h3>
           <Link to={`/add-product/${props.currentUser.id}`}><button>Add a new product</button></Link>
@@ -44,7 +43,7 @@ export default function UserProfile(props) {
             </Link>
             <Link to={`/edit-product/${product.id}`}><button>Edit Item</button> </Link>
           </div>
-      })}
+          })}
         </div>        
       </div>
       : <div>Loading...</div>

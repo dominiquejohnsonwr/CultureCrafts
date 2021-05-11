@@ -18,6 +18,7 @@ function App() {
 
   const [currentUser, setCurrentUser] = useState(null)
   const [userData, setUserData] = useState(null)
+  const [productToggle, setProductToggle] = useState(false)
 
   let history = useHistory()
 
@@ -30,7 +31,7 @@ function App() {
 
   useEffect(() => {
     verify()
-  }, [])
+  }, [productToggle])
   
   const verify = async () => {
     let user = await verifyUser()
@@ -50,7 +51,7 @@ function App() {
         </Route>
 
         <Route path='/edit-users/:id'>
-          <EditProfile userData={userData} setCurrentUser={setCurrentUser} />
+          <EditProfile userData={userData} setCurrentUser={setCurrentUser} setProductToggle={setProductToggle} />
         </Route>
 
         <Route path='/user-profile'>
@@ -74,7 +75,7 @@ function App() {
         </Route>
 
         <Route path='/edit-product/:id'>
-          <EditProduct />
+          <EditProduct currentUser={currentUser} setProductToggle={setProductToggle} />
         </Route>
 
 

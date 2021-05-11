@@ -38,6 +38,7 @@ export default function EditProfile(props) {
     e.preventDefault();
     let result = await updateUser(id, input);
     props.setCurrentUser(result)
+    props.setProductToggle(prevState => !prevState)
     setInput(input)
     history.push(`/user-profile`)
   }
