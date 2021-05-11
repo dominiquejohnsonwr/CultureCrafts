@@ -8,8 +8,8 @@ export default function Navbar(props) {
       return (
         <div className='nav-links'>
           <p> Welcome, {props.currentUser && props.currentUser.name}!</p>
-          <Link to={`/user-profile`}>My Profile</Link>
           <Link to={`/`}>Home</Link>
+          <Link to={`/user-profile`}>My Profile</Link>
           <button onClick={props.logout}>Sign out</button>
         </div>
       )

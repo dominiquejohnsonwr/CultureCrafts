@@ -19,7 +19,7 @@ function Login(props) {
     e.preventDefault();
     await loginUser(input);
     props.verify()
-    history.push("/products")
+    history.push("/")
   };
   return (
     <div>

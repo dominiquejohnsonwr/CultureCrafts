@@ -20,12 +20,12 @@ export default function Products() {
       <h1>Products</h1>
       {products.map((product) => {
         return <div>
-          <Link to='/products/:id'>
-            <h3>{product.name}</h3>
-            <img src={product.img_url} alt='product'/>
+          {/* <Link to='/products/:id'> */}
+            <h4>{product.name}</h4>
+          <img src={product.img_url} alt='product' height="200px"/>
             <h5>${product.price}</h5>
             <p>{product.description}</p>
-          </Link>
+          {/* </Link> */}
           </div>
       })}
     </div>

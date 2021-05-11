@@ -34,6 +34,7 @@ export default function UserProfile(props) {
         <div className="products-container">
           <h3>My Products</h3>
           <Link to={`/add-product/${props.currentUser.id}`}><button>Add a new product</button></Link>
+          
         </div>
         
       </div>

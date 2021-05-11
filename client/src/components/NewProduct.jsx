@@ -2,8 +2,10 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { createNewProduct } from "../services/auth"
 import { useState } from "react"
+import { useHistory } from "react-router-dom"
 
 export default function NewProduct() {
+  let history = useHistory()
   const { id } = useParams()
   const [input, setInput] = useState({})
 
@@ -18,7 +20,7 @@ export default function NewProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const res = await createNewProduct(input)
-    console.log(res)
+    history.push('/')
   }
 
   return (
