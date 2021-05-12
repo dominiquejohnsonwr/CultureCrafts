@@ -35,10 +35,10 @@ export default function Profile(props) {
         <div className="products-container">
           <h3>My Products</h3>
           {user.products.map((product) => {
-          return <div>
+            return <div key={product.id}>
             <Link to={`/products/${product.id}`}>
             <h4>{product.name}</h4>
-          <img src={product.img_url} alt='product' height="200px"/>
+            <img src={product.img_url} alt='product' height="200px"/>
             <h5>${product.price}</h5>
             <p>{product.description}</p>
             </Link>

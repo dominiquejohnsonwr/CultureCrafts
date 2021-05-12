@@ -1,22 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { getAllProducts, getAllUsers } from '../services/auth'
+import { getAllProducts } from '../services/auth'
 
 export default function Products() {
   const [products, setProducts] = useState([])
-  const [users, setUsers] = useState([])
 
   useEffect(() => {
     fetchProducts()
-    fetchUsers()
   }, [])
-
-  const fetchUsers = async () => {
-    const data = await getAllUsers()
-    setUsers(data)
-    console.log(data)
-  }
 
   const fetchProducts = async () => {
     const data = await getAllProducts()
@@ -27,12 +19,12 @@ export default function Products() {
     <div>
       <h1>Products</h1>
       {products.map((product) => {
-        return <div>
+        return <div key={product.id}>
           <Link to={`/products/${product.id}`}>
             <h4>{product.name}</h4>
             <img src={product.img_url} alt='product' height="200px"/>
             <h5>${product.price}</h5>
-            {/* <p>{product.description}</p> */}
+            <p>Item posted by {product.user.name}</p>
           </Link>
           </div>
       })}

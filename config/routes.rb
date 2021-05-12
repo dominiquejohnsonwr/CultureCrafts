@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :reviews
   resources :favorites
-  resources :products
+  resources :products do
+    resources :reviews
+  end
 
   devise_for :users, controllers: { registrations: 'registrations' }
   namespace :api do

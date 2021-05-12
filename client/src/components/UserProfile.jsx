@@ -34,7 +34,7 @@ export default function UserProfile(props) {
           <h3>My Products</h3>
           <Link to={`/add-product/${props.currentUser.id}`}><button>Add a new product</button></Link>
           {userLoggedIn.products.map((product) => {
-          return <div>
+            return <div key={product.id}>
             <Link to={`/products/${product.id}`}>
             <h4>{product.name}</h4>
           <img src={product.img_url} alt='product' height="200px"/>
