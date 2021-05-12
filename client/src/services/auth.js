@@ -2,7 +2,7 @@ import axios from 'axios'
 
 let apiUrl
 const apiUrls = {
-  development: "https://localhost:3000",
+  development: "http://localhost:3000",
   production: "https://vast-headland-60759.herokuapp.com/"
 }
 

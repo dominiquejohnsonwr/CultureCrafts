@@ -9,7 +9,8 @@ class ProductsController < ApiController
   end
 
   def show
-    render json: @product, include: %i[user reviews]
+    render json: @product,
+           include: { user: { only: %i[name id] }, reviews: { include: { user: { only: %i[name id] } } } }
   end
 
   def create
