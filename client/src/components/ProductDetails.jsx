@@ -11,6 +11,7 @@ export default function ProductDetails(props) {
 
   useEffect(() => {
     fetchProduct()
+    // eslint-disable-next-line
   }, [])
 
   const fetchProduct = async () => {
@@ -22,7 +23,7 @@ export default function ProductDetails(props) {
   return (
     <div className="details-container">
       <div className="details-img">
-        <img src={product.img_url} height="400px"/>
+        <img src={product.img_url} height="400px" alt="product"/>
       </div>
       <div className="details-info">
         {product.name}

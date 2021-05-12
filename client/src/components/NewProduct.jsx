@@ -1,12 +1,10 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
 import { createNewProduct } from "../services/auth"
 import { useState } from "react"
 import { useHistory } from "react-router-dom"
 
 export default function NewProduct() {
   let history = useHistory()
-  const { id } = useParams()
   const [input, setInput] = useState({})
 
   const handleChange = (e) => {

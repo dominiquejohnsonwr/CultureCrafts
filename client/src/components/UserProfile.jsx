@@ -16,7 +16,7 @@ export default function UserProfile(props) {
   }
   return (
     userLoggedIn && userLoggedIn.products?
-    <div>
+      <div>
         <div className="profile-container">
         {showEditButton()}
         <h3>User Profile</h3>
