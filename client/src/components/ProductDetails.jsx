@@ -45,6 +45,7 @@ export default function ProductDetails(props) {
 
 
   return (
+    product.reviews?
     <div className="details-container">
       <div className="details-img">
         <img src={product.img_url} height="400px" alt="product"/>
@@ -55,6 +56,13 @@ export default function ProductDetails(props) {
         <p>{product.description}</p>
         {showEditAndDeleteButton()}
       </div>
-    </div>
+      <div className="reviews">
+        <h3>Reviews</h3>
+          {product.reviews.map((review) => {
+              <p>{review.content}</p>
+        })}
+      </div>
+      </div>
+      : <div>Coming Soon</div>
   )
 }

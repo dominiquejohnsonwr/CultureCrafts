@@ -19,8 +19,7 @@ export default function AllUsers() {
     <div>
       <h1>Users</h1>
       {users.map((user) => {
-        console.log(user)
-        return <div>
+        return <div key={user.id}>
           <Link to={`/users/${user.id}`}>
             <h4>{user.name}</h4>
             <img src={user.profile_img} alt='user' height="200px"/>

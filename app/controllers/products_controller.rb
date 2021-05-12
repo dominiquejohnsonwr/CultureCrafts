@@ -5,11 +5,11 @@ class ProductsController < ApiController
   def index
     @products = Product.all
 
-    render json: @products, include: { user: { only: %i[name id] } }
+    render json: @products, include: { user: { only: %i[name id] }, reviews: { only: %i[content id] } }
   end
 
   def show
-    render json: @product, include: [:user]
+    render json: @product, include: %i[user reviews]
   end
 
   def create
