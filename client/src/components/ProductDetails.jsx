@@ -45,7 +45,7 @@ export default function ProductDetails(props) {
 
 
   return (
-    product.id?
+    product.name?
     <div className="details-container">
       <div className="details-img">
         <img src={product.img_url ? product.img_url : "https://gardensonquail.com/wp-content/uploads/2020/12/Image-Coming-Soon-400x400-1.jpg"} height="400px" alt="product"/>
@@ -59,6 +59,7 @@ export default function ProductDetails(props) {
       <div className="reviews">
         <h3>Reviews</h3>
           {product.reviews.map((review) => {
+            console.log(review)
             return (
               <div key={review.id}>
                 <p>{review.content}</p>

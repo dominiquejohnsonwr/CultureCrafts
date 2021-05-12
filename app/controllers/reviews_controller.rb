@@ -6,7 +6,7 @@ class ReviewsController < ApiController
   def index
     @reviews = Product.find(params[:product_id]).reviews
 
-    render json: @reviews, include: %i[product]
+    render json: @reviews, include: %i[product user]
   end
 
   # GET /reviews/1
