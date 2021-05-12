@@ -28,6 +28,11 @@ export const verifyUser = async () => {
   return false
 }
 
+export const getAllUsers = async () => {
+  const res = await api.get('/users')
+  return res.data
+}
+
 export const getUser = async (id) => {
   const res = await api.get(`/users/${id}`)
   const user = res.data

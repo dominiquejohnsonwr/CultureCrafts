@@ -9,6 +9,7 @@ import Profile from "./components/Profile.jsx"
 import NewProduct from "./components/NewProduct.jsx"
 import ProductDetails from "./components/ProductDetails.jsx"
 import EditProduct from "./components/EditProduct.jsx"
+import AllUsers from "./components/AllUsers.jsx"
 
 import { verifyUser } from "./services/auth"
 import EditProfile from './components/EditProfile';
@@ -76,6 +77,10 @@ function App() {
 
         <Route path='/edit-product/:id'>
           <EditProduct currentUser={currentUser} setProductToggle={setProductToggle} />
+        </Route>
+
+        <Route path='/users'>
+          <AllUsers />
         </Route>
 
 
