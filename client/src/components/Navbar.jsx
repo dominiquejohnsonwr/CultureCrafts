@@ -10,6 +10,7 @@ export default function Navbar(props) {
           <p> Welcome, {props.currentUser && props.currentUser.name}!</p>
           <Link to={`/`}>Home</Link>
           <Link to={`/user-profile`}>My Profile</Link>
+          <Link to={'/users'}>UserList</Link>
           <Link onClick={props.logout}>Sign out</Link>
         </div>
       )
