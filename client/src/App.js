@@ -68,7 +68,7 @@ function App() {
         </Route>
 
         <Route path='/add-product'>
-          <NewProduct />
+          <NewProduct setProductToggle={setProductToggle} />
         </Route>
 
         <Route path='/products/:id'>

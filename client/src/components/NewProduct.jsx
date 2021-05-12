@@ -3,7 +3,7 @@ import { createNewProduct } from "../services/auth"
 import { useState } from "react"
 import { useHistory } from "react-router-dom"
 
-export default function NewProduct() {
+export default function NewProduct(props) {
   let history = useHistory()
   const [input, setInput] = useState({})
 
@@ -19,6 +19,7 @@ export default function NewProduct() {
     e.preventDefault()
     await createNewProduct(input)
     setInput(input)
+    props.setProductToggle(prevState => !prevState)
     history.push('/')
   }
 

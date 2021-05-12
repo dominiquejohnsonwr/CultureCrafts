@@ -22,7 +22,8 @@ export default function ProductDetails(props) {
     setProduct(res);
   };
 
-  async function handleClick(props) {
+  async function handleClick(e) {
+    e.preventDefault()
     let item = product.id
     await deleteProduct(item)
     props.setProductToggle(prevState => !prevState)

@@ -1,14 +1,22 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { getAllProducts } from '../services/auth'
+import { getAllProducts, getAllUsers } from '../services/auth'
 
 export default function Products() {
   const [products, setProducts] = useState([])
+  const [users, setUsers] = useState([])
 
   useEffect(() => {
     fetchProducts()
+    fetchUsers()
   }, [])
+
+  const fetchUsers = async () => {
+    const data = await getAllUsers()
+    setUsers(data)
+    console.log(data)
+  }
 
   const fetchProducts = async () => {
     const data = await getAllProducts()
