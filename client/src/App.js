@@ -72,7 +72,7 @@ function App() {
         </Route>
 
         <Route path='/products/:id'>
-          <ProductDetails />
+          <ProductDetails currentUser={currentUser} />
         </Route>
 
         <Route path='/edit-product/:id'>
