@@ -22,7 +22,7 @@ export default function AllUsers() {
         return <div key={user.id}>
           <Link to={`/users/${user.id}`}>
             <h4>{user.name}</h4>
-            <img src={user.profile_img} alt='user' height="200px"/>
+            <img src={user.profile_img ? user.profile_img : "https://sumaleeboxinggym.com/wp-content/uploads/2018/06/Generic-Profile-1600x1600.png"} alt='user' height="200px"/>
           </Link>
           </div>
       })
