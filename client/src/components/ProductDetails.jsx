@@ -1,11 +1,13 @@
 import React from 'react'
 import { getProduct } from "../services/auth"
+import { deleteProduct } from "../services/auth"
 import { useEffect, useState } from "react"
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, useHistory } from "react-router-dom"
 
 export default function ProductDetails(props) {
   let userLoggedIn = props.currentUser
   let { id } = useParams()
+  let history = useHistory()
 
   const [product, setProduct] = useState({})
 
@@ -20,11 +22,22 @@ export default function ProductDetails(props) {
     setProduct(res);
   };
 
-  const showEditButton = () => {
-    console.log(userLoggedIn)
+  async function handleClick(props) {
+    let item = product.id
+    await deleteProduct(item)
+    props.setProductToggle(prevState => !prevState)
+    history.push('/user-profile')
+  }
+
+  const showEditAndDeleteButton = () => {
     if (userLoggedIn.id === product.user_id) {
-    return (
-      <Link to={`/edit-product/${product.id}`}><button>Edit Item</button> </Link>
+      return (
+      <div>
+        <Link to={`/edit-product/${product.id}`}>
+          <button>Edit Item</button> 
+        </Link>
+          <button onClick={handleClick}>Delete this item</button>
+      </div>
     )
   }
 }
@@ -39,7 +52,7 @@ export default function ProductDetails(props) {
         {product.name}
         <h4>${product.price}</h4>
         <p>{product.description}</p>
-        {showEditButton()}
+        {showEditAndDeleteButton()}
       </div>
     </div>
   )

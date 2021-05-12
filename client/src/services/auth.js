@@ -64,3 +64,8 @@ export const updateProduct = async (id, formData) => {
   const res = await api.put(`/products/${id}`, { product: formData })
   return res.data
 }
+
+export const deleteProduct = async (id) => {
+  const res = await api.delete(`/products/${id}`)
+  return res.data
+}

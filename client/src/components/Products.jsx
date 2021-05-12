@@ -19,7 +19,6 @@ export default function Products() {
     <div>
       <h1>Products</h1>
       {products.map((product) => {
-        console.log(product)
         return <div>
           <Link to={`/products/${product.id}`}>
             <h4>{product.name}</h4>

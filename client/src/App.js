@@ -56,7 +56,7 @@ function App() {
         </Route>
 
         <Route path='/user-profile'>
-          <UserProfile currentUser={currentUser} />
+          <UserProfile currentUser={currentUser} setProductToggle={setProductToggle} />
         </Route>
 
         <Route path="/users/:id">
@@ -72,7 +72,7 @@ function App() {
         </Route>
 
         <Route path='/products/:id'>
-          <ProductDetails currentUser={currentUser} />
+          <ProductDetails currentUser={currentUser} setProductToggle={setProductToggle} />
         </Route>
 
         <Route path='/edit-product/:id'>
