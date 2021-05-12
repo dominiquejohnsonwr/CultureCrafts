@@ -11,7 +11,7 @@ class ReviewsController < ApiController
 
   # GET /reviews/1
   def show
-    render json: @review
+    render json: @review, include: %i[product user]
   end
 
   # POST /reviews
