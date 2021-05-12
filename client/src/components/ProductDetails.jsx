@@ -48,7 +48,7 @@ export default function ProductDetails(props) {
     product.reviews?
     <div className="details-container">
       <div className="details-img">
-        <img src={product.img_url} height="400px" alt="product"/>
+        <img src={product.img_url ? product.img_url : "https://gardensonquail.com/wp-content/uploads/2020/12/Image-Coming-Soon-400x400-1.jpg"} height="400px" alt="product"/>
       </div>
       <div className="details-info">
         {product.name}
