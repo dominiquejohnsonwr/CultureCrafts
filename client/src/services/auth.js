@@ -1,9 +1,19 @@
 import axios from 'axios'
 
-const baseUrl = "http://localhost:3000"
+let apiUrl
+const apiUrls = {
+  development: "https://localhost:3000",
+  production: "https://https://vast-headland-60759.herokuapp.com/"
+}
+
+if (window.location.hostname === "localhost") {
+  apiUrl = apiUrls.development;
+} else {
+  apiUrl = apiUrls.production;
+}
 
 const api = axios.create({
-  baseURL: baseUrl,
+  baseURL: apiUrl,
 })
 
 export const registerUser = async (formData) => {
