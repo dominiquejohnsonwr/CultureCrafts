@@ -5,7 +5,7 @@ class ProductsController < ApiController
   def index
     @products = Product.all
 
-    render json: @products, include: { user: { only: :name } }
+    render json: @products, include: { user: { only: %i[name id] } }
   end
 
   def show

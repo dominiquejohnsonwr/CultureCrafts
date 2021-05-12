@@ -6,7 +6,7 @@ class ReviewsController < ApiController
   def index
     @reviews = Product.find(params[:product_id]).reviews
 
-    render json: @reviews, include: [:product]
+    render json: @reviews, include: %i[product]
   end
 
   # GET /reviews/1
@@ -17,10 +17,11 @@ class ReviewsController < ApiController
   # POST /reviews
   def create
     @product = Product.find(params[:product_id])
-    @review = @product.reviews.build(review_params)
+    @review = current_user.reviews.build(review_params)
+    @review.product = @product
 
     if @review.save
-      render json: @review, status: :created, location: @review
+      render json: @review, status: :created
     else
       render json: @review.errors, status: :unprocessable_entity
     end
@@ -49,6 +50,6 @@ class ReviewsController < ApiController
 
   # Only allow a list of trusted parameters through.
   def review_params
-    params.require(:review).permit(:content, :product_id, :user_id)
+    params.require(:review).permit(:content)
   end
 end

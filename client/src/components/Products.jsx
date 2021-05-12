@@ -13,6 +13,7 @@ export default function Products() {
   const fetchProducts = async () => {
     const data = await getAllProducts()
     setProducts(data)
+    console.log(data)
   }
 
   return (
@@ -24,8 +25,9 @@ export default function Products() {
             <h4>{product.name}</h4>
             <img src={product.img_url} alt='product' height="200px"/>
             <h5>${product.price}</h5>
-            <p>Item posted by {product.user.name}</p>
           </Link>
+          <p>Item posted by <Link to={`/users/${product.user.id}`}>{product.user.name}</Link></p>
+
           </div>
       })}
     </div>
