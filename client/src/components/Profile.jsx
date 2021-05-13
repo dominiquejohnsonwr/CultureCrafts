@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import { getUser } from '../services/auth'
+import "./Profile.css"
 
 export default function Profile(props) {
   const [user, setUser] = useState({})
@@ -32,16 +33,19 @@ export default function Profile(props) {
           </div>      
         </div>
         </div>
-        <div className="products-container">
+        <div className="user-product-header">
           <h3>My Products</h3>
+        </div>
+        <div className="user-product-container">
           {user.products.map((product) => {
-            return <div key={product.id}>
+            return <div className='user-product-card' key={product.id}>
             <Link to={`/products/${product.id}`}>
-            <h4>{product.name}</h4>
-            <img src={product.img_url ? product.img_url : "https://gardensonquail.com/wp-content/uploads/2020/12/Image-Coming-Soon-400x400-1.jpg"} alt='product' height="200px"/>
-            <h5>${product.price}</h5>
-            <p>{product.description}</p>
+            <img src={product.img_url ? product.img_url : "https://gardensonquail.com/wp-content/uploads/2020/12/Image-Coming-Soon-400x400-1.jpg"} alt='product' height="250px" width="250px"/>
             </Link>
+            <div className='card-text-container'>
+              <h4>{product.name}</h4>
+              <h5>${product.price}</h5>
+            </div>
           </div>
           })}
         </div>        

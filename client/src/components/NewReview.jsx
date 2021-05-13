@@ -3,6 +3,7 @@ import { createNewReview } from '../services/auth'
 import { useHistory, useParams } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { getProduct } from "../services/auth"
+import "./NewReview.css"
 
 export default function NewReview(props) {
   let history = useHistory()
@@ -39,11 +40,15 @@ export default function NewReview(props) {
   
   
   return (
-    <div>
+    <div className='product-review-container'>
       <div className="product-details">
-        {product.name}
+        <h1>{product.name}</h1>
+      </div>
+      <div className='product-image'>
         <img src={product.img_url ? product.img_url : "https://gardensonquail.com/wp-content/uploads/2020/12/Image-Coming-Soon-400x400-1.jpg"} alt="product" />
-        {product.description}
+      </div>
+      <div className='product-description'>
+        <h4>{product.description}</h4>
       </div>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <label>Review this product:</label>

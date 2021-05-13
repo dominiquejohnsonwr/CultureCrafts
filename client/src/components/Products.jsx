@@ -25,7 +25,7 @@ export default function Products() {
         {products.map((product) => {
           return <div className='product-card' key={product.id}>
             <Link to={`/products/${product.id}`}>
-              <img src={product.img_url ? product.img_url : "https://gardensonquail.com/wp-content/uploads/2020/12/Image-Coming-Soon-400x400-1.jpg"} alt='product' height="200px" className='product-img' />
+              <img src={product.img_url ? product.img_url : "https://gardensonquail.com/wp-content/uploads/2020/12/Image-Coming-Soon-400x400-1.jpg"} alt='product' height="250px" className='product-img' />
               <h4>{product.name}</h4>
             </Link>
             <h5>${product.price}</h5>

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { getProduct } from "../services/auth"
 import { updateProduct } from "../services/auth"
 import { useParams, useHistory } from "react-router-dom"
+import "./EditProduct.css"
 
 export default function EditProduct(props) {
   let { id } = useParams()
@@ -48,18 +49,20 @@ export default function EditProduct(props) {
 
   return (
     <div>
-      <h3>Edit Item</h3>
-      <form onChange={handleChange} onSubmit={handleSubmit}>
-        <label>Product name:</label>
-        <input name="name" type="text" defaultValue={product.name}/>
-        <label>Price:</label>
-        <input name="price" type="integer" defaultValue={product.price} />
-        <label>Product Image Url:</label>
-        <input name="img_url" type="text" defaultValue={product.img_url} />
-        <label>Product description:</label>
-        <input name="description" type="text" defaultValue={product.description} />
-        <button type="submit">Submit Changes</button>
-      </form>
+      <div className='edit-product-title'>
+        <h3>Edit Item</h3>
+      </div>
+        <form className='edit-product-form' onChange={handleChange} onSubmit={handleSubmit}>
+          <label>Product name:</label>
+          <input name="name" type="text" defaultValue={product.name}/>
+          <label>Price:</label>
+          <input name="price" type="integer" defaultValue={product.price} />
+          <label>Product Image Url:</label>
+          <input name="img_url" type="text" defaultValue={product.img_url} />
+          <label>Product description:</label>
+          <input name="description" type="text" defaultValue={product.description} />
+          <button className="edit-product-btn" type="submit">Submit Changes</button>
+        </form>
     </div>
   )
 }
