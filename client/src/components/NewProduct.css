@@ -1,0 +1,26 @@
+.new-product-form {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding-top: 25px;
+  width: 50%;
+  background-color: rgb(224, 223, 223);
+}
+
+.new-product-title {
+  margin-top: 50px;
+}
+
+.create-product-submit {
+  margin: 0 auto;
+  margin: 20px 0 20px 0;
+  height: 45px;
+  width: 105px;
+  color: #ffffff;
+  background-color: #0d75f8;
+}

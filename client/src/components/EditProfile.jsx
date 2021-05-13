@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { updateUser } from "../services/auth"
 import { getUser } from "../services/auth"
 import { useParams, useHistory } from "react-router-dom"
+import "./EditProfile.css"
 
 export default function EditProfile(props) {
   let { id } = useParams()
@@ -46,16 +47,18 @@ export default function EditProfile(props) {
 
   return (
     <div>
-      <h3>Edit Profile</h3>
-      <form onChange={handleChange} onSubmit={handleSubmit}>
-        <label>Username:</label>
-        <input name="name" type="text" placeholder="Enter username" defaultValue={user.name}/>
-        <label>Email:</label>
-        <input name="email" type="email" placeholder="Enter your email address" defaultValue={user.email} />
-        <label>Profile Image Url:</label>
-        <input name="profile_img" type="text" placeholder="paste your image url here..." defaultValue={user.profile_img} />
-        <button type="submit">Submit Changes</button>
-      </form>
+      <div className='edit-profile-title'>
+        <h3>Edit Profile</h3>
+      </div>
+        <form className='edit-profile-form' onChange={handleChange} onSubmit={handleSubmit}>
+          <label>Username:</label>
+          <input name="name" type="text" placeholder="Enter username" defaultValue={user.name}/>
+          <label>Email:</label>
+          <input name="email" type="email" placeholder="Enter your email address" defaultValue={user.email} />
+          <label>Profile Image Url:</label>
+          <input name="profile_img" type="text" placeholder="paste your image url here..." defaultValue={user.profile_img} />
+          <button className="edit-profile-btn" type="submit">Submit Changes</button>
+        </form>
     </div>
   )
 }
