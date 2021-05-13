@@ -13,7 +13,6 @@ export default function Products() {
   const fetchProducts = async () => {
     const data = await getAllProducts()
     setProducts(data)
-    console.log(data)
   }
 
   return (

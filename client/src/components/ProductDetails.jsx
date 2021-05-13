@@ -57,11 +57,14 @@ export default function ProductDetails(props) {
         {showEditAndDeleteButton()}
       </div>
       <div className="reviews">
-        <h3>Reviews</h3>
+          <h3>Reviews</h3>
+          <Link to={`/add-review/products/${product.id}`}>
+            <button>Add a Review</button>
+          </Link>
           {product.reviews.map((review) => {
-            console.log(review)
             return (
               <div key={review.id}>
+                <p>Review provided by {review.user.name}</p>
                 <p>{review.content}</p>
               </div>
             )

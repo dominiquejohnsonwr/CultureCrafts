@@ -79,3 +79,8 @@ export const deleteProduct = async (id) => {
   const res = await api.delete(`/products/${id}`)
   return res.data
 }
+
+export const createNewReview = async (id, formData) => {
+  const res = await api.post(`/products/${id}/reviews`, { review: formData })
+  return res.data
+}
