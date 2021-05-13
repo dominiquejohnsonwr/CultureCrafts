@@ -1,0 +1,26 @@
+.products-container {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.product-card {
+  /* border: 1px solid black; */
+  width: 300px;
+  margin: 20px;
+}
+
+.product-img {
+  width: 250px;
+}
+
+a:visited {
+  color: #000000;
+}
+
+a:hover {
+  color: #0d75f8;
+}

@@ -9,17 +9,17 @@ export default function Navbar(props) {
       return (
         <div className='nav-links'>
           <p className='nav-text'> Welcome, <strong>{props.currentUser && props.currentUser.name}</strong></p> 
-          <Link to={`/`}>Home</Link>
-          <Link to={`/user-profile`}>My Profile</Link>
-          <Link to={'/users'}>UserList</Link>
+          <Link to={`/`} className='navbar-link'>Home</Link>
+          <Link to={`/user-profile`} className='navbar-link'>My Profile</Link>
+          <Link to={'/users'} className='navbar-link'>UserList</Link>
           <button onClick={props.logout}>Sign out</button>
         </div>
       )
     } else {
       return (
         <div className='links'>
-          <Link to='/login'>Sign in</Link>
-          <Link to='/signup'>Register</Link>
+          <Link to='/login' className='navbar-link'>Sign in</Link>
+          <Link to='/signup' className='navbar-link'>Register</Link>
         </div>
       )
     }
