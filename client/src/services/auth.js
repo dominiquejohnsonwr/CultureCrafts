@@ -84,3 +84,18 @@ export const createNewReview = async (id, formData) => {
   const res = await api.post(`/products/${id}/reviews`, { review: formData })
   return res.data
 }
+
+export const createFavorite = async (product_id) => {
+  const res = await api.post('/favorites', { product_id })
+  return res.data
+}
+
+export const getAllFavorites = async () => {
+  const res = await api.get("/favorites")
+  return res.data
+}
+
+export const deleteFavorite = async (product_id) => {
+  const res = await api.delete('/favorites', { product_id })
+  return res.data
+}

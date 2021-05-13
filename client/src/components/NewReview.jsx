@@ -47,7 +47,7 @@ export default function NewReview(props) {
       </div>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <label>Review this product:</label>
-        <input name="content" type="textarea" value={input.content} />
+        <input name="content" type="textarea" defaultValue={input.content} />
         <button>Submit review</button>
       </form>
     </div>

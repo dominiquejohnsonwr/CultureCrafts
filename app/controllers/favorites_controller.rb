@@ -1,38 +1,23 @@
-class FavoritesController < ApplicationController
-  before_action :set_favorite, only: %i[show update destroy]
-
-  # GET /favorites
+class FavoritesController < ApiController
   def index
-    @favorites = Favorite.all
+    @favorites = current_user.favorites
 
     render json: @favorites
   end
 
-  # POST /favorites
   def create
-    @favorite = Favorite.new(favorite_params)
+    @product = Product.find(params[:product_id])
 
-    if @favorite.save
-      render json: @favorite, status: :created, location: @favorite
+    if current_user.products << @product
+      render json: current_user.products
     else
-      render json: @favorite.errors, status: :unprocessable_entity
+      render json: current_user.errors
     end
   end
 
-  # DELETE /favorites/1
   def destroy
-    @favorite.destroy
-  end
+    @product = Product.find(params[:product_id])
 
-  private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_favorite
-    @favorite = Favorite.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def favorite_params
-    params.require(:favorite).permit(:product_id, :user_id)
+    current_user.products.delete(@product)
   end
 end

@@ -42,7 +42,7 @@ export default function EditProduct(props) {
       setInput(input)
       setProduct(result)
       props.setProductToggle(prevState => !prevState)
-      history.push(`/user-profile`)
+      history.push(`/products/${product.id}`)
   }
 
 
