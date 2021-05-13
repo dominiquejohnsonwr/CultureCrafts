@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { loginUser } from "../services/auth";
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom"
+import './Login.css'
 
 
 function Login(props) {
@@ -22,15 +23,17 @@ function Login(props) {
     history.push("/")
   };
   return (
-    <div>
+    <div className='login-title'>
       <h1>Login</h1>
-      <form onChange={handleChange} onSubmit={handleSubmit}>
-        <label>Email:</label>
-        <input name="email" type="email" />
-        <label>Password:</label>
-        <input name="password" type="password" />
-        <button type="submit">Sign In</button>
-      </form>
+      <div className='form-container'>
+        <form className='log-in-form' onChange={handleChange} onSubmit={handleSubmit}>
+          <label>Email:</label>
+          <input name="email" type="email" />
+          <label>Password:</label>
+          <input name="password" type="password" />
+          <button className='login-submit' type="submit">Sign In</button>
+        </form>
+      </div>
     </div>
   );
 }

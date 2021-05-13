@@ -91,7 +91,7 @@ export const createFavorite = async (product_id) => {
 }
 
 export const getAllFavorites = async () => {
-  const res = await api.get("/favorites")
+  const res = await api.post("/favorites")
   return res.data
 }
 

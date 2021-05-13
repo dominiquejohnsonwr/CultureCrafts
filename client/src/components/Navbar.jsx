@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from "react-router-dom"
+import './Navbar.css'
+
 
 export default function Navbar(props) {
   function showNav() {
-
     if (props.currentUser) {
       return (
         <div className='nav-links'>
-          <p> Welcome, {props.currentUser && props.currentUser.name}!</p>
+          <p className='nav-text'> Welcome, <strong>{props.currentUser && props.currentUser.name}</strong></p> 
           <Link to={`/`}>Home</Link>
           <Link to={`/user-profile`}>My Profile</Link>
           <Link to={'/users'}>UserList</Link>
@@ -16,7 +17,7 @@ export default function Navbar(props) {
       )
     } else {
       return (
-        <div className='nav-links'>
+        <div className='links'>
           <Link to='/login'>Sign in</Link>
           <Link to='/signup'>Register</Link>
         </div>
@@ -24,11 +25,9 @@ export default function Navbar(props) {
     }
   }
   return (
-    <div className='nav'>
-      <Link to='/'>
-        <h3><img className='logo' src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/cc-512.png" height="80px" alt="logo" /> Culture Crafts</h3>
-      </Link>
+      <div className='nav'>
+        <h2>Culture Crafts</h2>
         {showNav()}
-    </div>
+      </div>
   )
 }
