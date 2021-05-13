@@ -18,7 +18,7 @@ import Products from './components/Products';
 
 function App() {
 
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState({})
   const [userData, setUserData] = useState(null)
   const [productToggle, setProductToggle] = useState(false)
 
@@ -61,7 +61,7 @@ function App() {
         </Route>
 
         <Route path="/users/:id">
-          <Profile />
+          <Profile currentUser={currentUser} />
         </Route>
 
         <Route exact path='/'>
@@ -73,7 +73,7 @@ function App() {
         </Route>
 
         <Route path='/products/:id'>
-          <ProductDetails currentUser={currentUser} setProductToggle={setProductToggle} />
+          <ProductDetails currentUser={currentUser} setProductToggle={setProductToggle} productToggle={productToggle} />
         </Route>
 
         <Route path='/edit-product/:id'>

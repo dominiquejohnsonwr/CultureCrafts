@@ -8,16 +8,16 @@ class FavoritesController < ApiController
   def create
     @product = Product.find(params[:product_id])
 
-    if current_user.products << @product
-      render json: current_user.products
+    if current_user.favorite_products << @product
+      render json: current_user.favorite_products
     else
       render json: current_user.errors
     end
   end
 
   def destroy
-    @product = Product.find(params[:product_id])
+    @product = Product.find(params[:id])
 
-    current_user.products.delete(@product)
+    current_user.favorite_products.delete(@product)
   end
 end

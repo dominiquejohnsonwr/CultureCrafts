@@ -7,6 +7,8 @@ import "./Profile.css"
 export default function Profile(props) {
   const [user, setUser] = useState({})
   const { id } = useParams()
+  let userLoggedIn = props.currentUser
+
 
   useEffect(() => {
     fetch()
@@ -15,14 +17,36 @@ export default function Profile(props) {
 
   async function fetch() {
     let res = await getUser(id)
-    console.log(res)
     setUser(res)
-}
+  }
+  
+  const showEditButton = () => {
+    if (userLoggedIn && userLoggedIn.id === user.id) {
+      return (
+        <Link to={`/edit-users/${userLoggedIn.id}`} className="edit-user-btn">
+          <img src="https://www.pinclipart.com/picdir/big/220-2203636_ykle-wode-svg-png-icon-free-download-edit.png" height={30} width={30} alt={"edit profile icon"} className='edit-icon' />
+        </Link>
+      )
+    }
+  }
+  
+  
+  const showNewProductButton = () => {
+    if (userLoggedIn && userLoggedIn.id === user.id) {
+      return (
+        <Link to={`/add-product/${userLoggedIn.id}`}><button className='new-product-btn'>Add a new product</button></Link>
+      )
+    }
+  }
+
+
+
   
   return (
     user.name && user.products ?
-    <div>
-    <div className="profile-container">
+      <div>
+        {showEditButton()}
+      <div className="profile-container">
         <div className="user-info-contain">
           <div className="user-info">
             <img className="profile-image" src={user.profile_img ? user.profile_img : "https://sumaleeboxinggym.com/wp-content/uploads/2018/06/Generic-Profile-1600x1600.png"} height={350} width={350} alt="profile pic" />
@@ -35,6 +59,7 @@ export default function Profile(props) {
         </div>
         <div className="user-product-header">
           <h3>My Products</h3>
+          {showNewProductButton()}
         </div>
         <div className="user-product-container">
           {user.products.map((product) => {

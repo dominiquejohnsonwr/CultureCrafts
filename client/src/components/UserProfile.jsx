@@ -1,10 +1,13 @@
 import { Link, } from "react-router-dom"
+import { deleteProduct } from "../services/auth"
+import { useHistory } from "react-router-dom"
 import "./UserProfile.css"
 
 
 
 export default function UserProfile(props) {
   let userLoggedIn = props.currentUser
+  let history = useHistory()
 
   const showEditButton = () => {
       if (userLoggedIn && userLoggedIn.id) {
@@ -15,6 +18,14 @@ export default function UserProfile(props) {
       )
     }
   }
+
+  async function handleClick(e, id) {
+    e.preventDefault()
+    await deleteProduct(id)
+    props.setProductToggle(prevState => !prevState)
+    history.push('/user-profile')
+  }
+  
   return (
     userLoggedIn && userLoggedIn.products?
       <div>
@@ -44,8 +55,9 @@ export default function UserProfile(props) {
             <h4>{product.name}</h4>
             <h5>${product.price}</h5>
             </div>
-            <Link to={`/edit-product/${product.id}`}><button className='profile-edit-product-btn'>Edit Item</button> </Link>
-          </div>
+              <Link to={`/edit-product/${product.id}`}><button className='profile-edit-product-btn'>Edit Item</button> </Link>
+              <button className='profile-delete-product-btn' onClick= {(e) => handleClick(e, product.id)}>Delete this item</button>
+            </div>
           })}
         </div>        
       </div>

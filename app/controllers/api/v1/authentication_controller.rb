@@ -11,6 +11,6 @@ class Api::V1::AuthenticationController < ApiController
   end
 
   def fetch
-    render json: current_user, include: :products
+    render json: current_user, include: %i[products favorites]
   end
 end

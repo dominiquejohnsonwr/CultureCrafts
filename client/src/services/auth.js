@@ -95,7 +95,7 @@ export const getAllFavorites = async () => {
   return res.data
 }
 
-export const deleteFavorite = async (product_id) => {
-  const res = await api.delete('/favorites', { product_id })
+export const deleteFavorite = async (id) => {
+  const res = await api.delete(`/favorites/${id}`)
   return res.data
 }
