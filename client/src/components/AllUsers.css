@@ -1,4 +1,8 @@
-.products-container {
+.users-title {
+  margin-top: 50px;
+}
+
+.users-container {
   margin: 0 auto;
   width: 100%;
   display: flex;
@@ -7,12 +11,12 @@
   margin: 0 auto;
 }
 
-.product-card {
+.user-card {
   width: 250px;
   margin: 20px;
 }
 
-.product-img {
+.user-img {
   width: 250px;
 }
 
@@ -22,8 +26,4 @@ a:visited {
 
 a:hover {
   color: #0d75f8;
-}
-
-.card-font {
-  font-size: 12px;
 }
