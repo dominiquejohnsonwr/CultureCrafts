@@ -1,6 +1,6 @@
 .products-container {
   margin: 0 auto;
-  width: 100%;
+  max-width: 85%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
