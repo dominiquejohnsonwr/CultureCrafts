@@ -27,7 +27,9 @@ export default function Navbar(props) {
   return (
     <div className='nav'>
       <div className='logo'>
-        <img src="https://freepikpsd.com/wp-content/uploads/2019/10/cc-logo-png-4-Transparent-Images.png" className='logo' alt="logo" />
+        <Link to='/'>
+          <img src="https://freepikpsd.com/wp-content/uploads/2019/10/cc-logo-png-4-Transparent-Images.png" className='logo' alt="logo" />
+        </Link>
       </div>
         {showNav()}
       </div>
