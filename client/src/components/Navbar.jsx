@@ -12,7 +12,7 @@ export default function Navbar(props) {
           <Link to={`/`} className='navbar-link'>Home</Link>
           <Link to={`/user-profile`} className='navbar-link'>My Profile</Link>
           <Link to={'/users'} className='navbar-link'>UserList</Link>
-          <button onClick={props.logout}>Sign out</button>
+          <button className='sign-out-button' onClick={props.logout}>Sign out</button>
         </div>
       )
     } else {

@@ -24,3 +24,12 @@
   color: #ffffff;
   background-color: #0d75f8;
 }
+
+@media screen and (max-width: 650px) {
+  .new-product-form {
+    width: 85%;
+  }
+  input {
+    width: 80%;
+  }
+}
