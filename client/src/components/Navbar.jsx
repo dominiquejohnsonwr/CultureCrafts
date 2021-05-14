@@ -25,8 +25,10 @@ export default function Navbar(props) {
     }
   }
   return (
-      <div className='nav'>
-        <h2>Culture Crafts</h2>
+    <div className='nav'>
+      <div className='logo'>
+        <img src="https://freepikpsd.com/wp-content/uploads/2019/10/cc-logo-png-4-Transparent-Images.png" className='logo' alt="logo" />
+      </div>
         {showNav()}
       </div>
   )

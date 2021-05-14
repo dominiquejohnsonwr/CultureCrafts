@@ -19,7 +19,7 @@ export default function Products() {
   return (
     <div>
       <div className='product-title'>
-        <h1>All Products</h1>
+        <h3>Welcome to Culture Crafts! Browse products here...</h3>
       </div>
       <div className='products-container'>
         {products.map((product) => {
