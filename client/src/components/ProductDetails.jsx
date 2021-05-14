@@ -37,7 +37,7 @@ export default function ProductDetails(props) {
           <button className='update-btn'>Edit Item</button> 
         </Link>
       </div>
-    : <div>Loading...</div>
+    : <div></div>
     )
   }
 
