@@ -5,3 +5,8 @@
 .product-review-container {
   margin: 0 auto;
 }
+
+.product-description {
+  max-width: 80%;
+  margin: 0 auto;
+}
