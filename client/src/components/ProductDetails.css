@@ -17,6 +17,11 @@
   background-color: rgb(243, 239, 239);
 }
 
+.details-info {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
 .reviews {
   margin-bottom: 45px;
   max-width: 80%;
