@@ -24,3 +24,12 @@
   color: #ffffff;
   background-color: #0d75f8;
 }
+
+@media screen and (max-width: 650px) {
+  .edit-product-form {
+    border: 1px solid black;
+    width: 90%;
+    margin: 10px auto;
+    background-color: rgb(243, 239, 239);
+  }
+}

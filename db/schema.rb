@@ -10,60 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_12_175104) do
-
+ActiveRecord::Schema.define(version: 20_210_512_175_104) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "favorites", force: :cascade do |t|
-    t.bigint "product_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["product_id"], name: "index_favorites_on_product_id"
-    t.index ["user_id", "product_id"], name: "index_favorites_on_user_id_and_product_id", unique: true
-    t.index ["user_id"], name: "index_favorites_on_user_id"
+  create_table 'favorites', force: :cascade do |t|
+    t.bigint 'product_id', null: false
+    t.bigint 'user_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['product_id'], name: 'index_favorites_on_product_id'
+    t.index %w[user_id product_id], name: 'index_favorites_on_user_id_and_product_id', unique: true
+    t.index ['user_id'], name: 'index_favorites_on_user_id'
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
-    t.string "img_url"
-    t.string "description"
-    t.string "category"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_products_on_user_id"
+  create_table 'products', force: :cascade do |t|
+    t.string 'name'
+    t.integer 'price'
+    t.string 'img_url'
+    t.string 'description'
+    t.string 'category'
+    t.bigint 'user_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['user_id'], name: 'index_products_on_user_id'
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.string "content"
-    t.bigint "product_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
-    t.index ["product_id"], name: "index_reviews_on_product_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
+  create_table 'reviews', force: :cascade do |t|
+    t.string 'content'
+    t.bigint 'product_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.bigint 'user_id', null: false
+    t.index ['product_id'], name: 'index_reviews_on_product_id'
+    t.index ['user_id'], name: 'index_reviews_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name", default: "", null: false
-    t.string "email", default: "", null: false
-    t.string "profile_img", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'name', default: '', null: false
+    t.string 'email', default: '', null: false
+    t.string 'profile_img', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
-  add_foreign_key "favorites", "products"
-  add_foreign_key "favorites", "users"
-  add_foreign_key "products", "users"
-  add_foreign_key "reviews", "products"
-  add_foreign_key "reviews", "users"
+  add_foreign_key 'favorites', 'products'
+  add_foreign_key 'favorites', 'users'
+  add_foreign_key 'products', 'users'
+  add_foreign_key 'reviews', 'products'
+  add_foreign_key 'reviews', 'users'
 end

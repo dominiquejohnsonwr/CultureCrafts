@@ -35,11 +35,14 @@ class ProductsController < ApiController
   end
 
   def destroy
-    if @product.user == current_user && @product.destroy
-      render json: { message: 'Your product has been successfully deleted.' }
-    else
-      render json: @product.errors
-    end
+    Favorite.where(product: @product).destroy_all
+    Review.where(product: @product).destroy_all
+    # set_product
+    # if @product.destroy!
+    #   render json: { message: 'Your product has been successfully deleted.' }
+    # else
+    #   render json: @product.errors
+    # end
   end
 
   private

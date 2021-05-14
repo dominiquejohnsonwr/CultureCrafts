@@ -29,3 +29,12 @@ input {
   width: 60%;
   margin: 15px 0 15px 0;
 }
+
+@media screen and (max-width: 650px) {
+  .log-in-form {
+    width: 85%;
+  }
+  input {
+    width: 80%;
+  }
+}

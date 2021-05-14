@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
   belongs_to :user
-  has_many :favorites, dependent: :destroy
-  has_many :reviews, dependent: :destroy
+  has_many :favorites
+  has_many :reviews
 end
